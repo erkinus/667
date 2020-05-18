@@ -10,32 +10,35 @@
 		
 		<style>
 			@font-face {
-			 font-family: "OptimalC";
-			 src: url('resources/OptimalC.eot?#iefix') format('embedded-opentype'),
-			       url('resources/OptimalC.svg#OptimalC-Bold') format('svg'),
-			       url('resources/OptimalC.ttf') format('truetype'),
-			       url('resources/OptimalC.woff') format('woff'),
-			       url('resources/OptimalC.woff2') format('woff2');
+			font-family: "Gill Sans";
+			src: url('/resources/GillSansProCyrillic-Light.eot');
+		    src: local('Gill Sans Pro Cyrillic Light'), local('GillSansProCyrillic-Light'),
+		        url('/resources/GillSansProCyrillic-Light.eot?#iefix') format('embedded-opentype'),
+		        url('/resources/GillSansProCyrillic-Light.woff2') format('woff2'),
+		        url('/resources/GillSansProCyrillic-Light.woff') format('woff'),
+		        url('/resources/GillSansProCyrillic-Light.ttf') format('truetype');
 			 font-weight: normal;
 			 font-style: normal;
 			}
 			@font-face {
-			 font-family: "OptimalC";
-			 src: url('resources/OptimalC-Bold.eot?#iefix') format('embedded-opentype'),
-			       url('resources/OptimalC-Bold.svg#OptimalC-Bold') format('svg'),
-			       url('resources/OptimalC-Bold.ttf') format('truetype'),
-			       url('resources/OptimalC-Bold.woff') format('woff'),
-			       url('resources/OptimalC-Bold.woff2') format('woff2');
+			 font-family: "Gill Sans";
+			src: url('/resources/GillSansProCyrillic-Medium.eot');
+		    src: local('Gill Sans Pro Cyrillic Medium'), local('GillSansProCyrillic-Medium'),
+		        url('/resources/GillSansProCyrillic-Medium.eot?#iefix') format('embedded-opentype'),
+		        url('/resources/GillSansProCyrillic-Medium.woff2') format('woff2'),
+		        url('/resources/GillSansProCyrillic-Medium.woff') format('woff'),
+		        url('/resources/GillSansProCyrillic-Medium.ttf') format('truetype');
 			 font-weight: bold;
 			 font-style: normal;
 			}
 			@font-face {
-			 font-family: "OptimalC";
-			 src: url('resources/OptimalC-Italic.eot?#iefix') format('embedded-opentype'),
-			       url('resources/OptimalC-Italic.svg#OptimalC-Italic') format('svg'),
-			       url('resources/OptimalC-Italic.ttf') format('truetype'),
-			       url('resources/OptimalC-Italic.woff') format('woff'),
-			       url('resources/OptimalC-Italic.woff2') format('woff2');	
+			font-family: "Gill Sans";
+			src: url('/resources/GillSansProCyrillic-LightItalic.eot');
+		    src: local('Gill Sans Pro Cyrillic Light Italic'), local('GillSansProCyrillic-LightItalic'),
+		        url('/resources/GillSansProCyrillic-LightItalic.eot?#iefix') format('embedded-opentype'),
+		        url('/resources/GillSansProCyrillic-LightItalic.woff2') format('woff2'),
+		        url('/resources/GillSansProCyrillic-LightItalic.woff') format('woff'),
+		        url('/resources/GillSansProCyrillic-LightItalic.ttf') format('truetype');
 			 font-weight: normal;
 			 font-style: italic;
 			}
@@ -50,7 +53,7 @@
 				width: 100px;
 			}
 			.head--article {
-				font-family: OptimalC, sans-serif;
+				font-family: "Gill Sans", sans-serif;
 				font-weight: normal;
 				font-style: normal;
 				background: #202020;
@@ -117,11 +120,19 @@
 						<div class="sub--article">
 							<p>Обещал закончить карьеру СД, но пока только отобрал "галочку"</p>
 						</div>
-					</div>
+					</div><!-image--article не включен в wrapper т.к. для корректной работы раздвоения фона image-half-bg--article нужно ставить его отдельно от общего контейнера->
 						<div class="image--article">
 							<img class="container" src="resources/image.jpg" alt="">
-							<div class="image-half-bg--article"></div>
+							<div class="image-half-bg--article"></div><!-соотносить с цветом общего фона->
 						</div>
+				</div><!-END head--article->
+				<div class="content--article">
+					<div class="wrapper container">
+						<p>Вчера вручались награды Brit Awards 2020.</p>
+						<p>Что там было: Dave получил награду "Лучший альбом" за прошлогодний "Psychodrama", исполнил под пианино песню "Black" и зафристайлил, назвав Бориса Джонсона расистом.</p>
+						<p>Stormzy получил статуэтку в номинации "Исполнитель года" и исполнил попурри из треков "Don't Forget to Breathe", "Wiley Flow" (примечательно, что это в разгар бифа с Wiley) "Own It", "Rainfall", вытащил на сцену Burna Boy и толпу.</p>
+						<p>Еще из забавного: Tyler, The Creator, получая награду "Лучший международный артист", шатаутнул Терезе Мэй (экс-премьер Великобритании) в финале своей поздравительной речи (ее, к слову, на этой же премии в 2018 году диссил Stormzy).</p>
+					</div>
 				</div>
 			</article>
 		
