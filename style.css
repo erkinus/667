@@ -1,0 +1,215 @@
+@font-face {
+font-family: "Gill Sans";
+src: url('resources/GillSansProCyrillic-Medium.eot');
+src: local('Gill Sans Pro Cyrillic Medium'), local('GillSansProCyrillic-Medium'),
+    url('resources/GillSansProCyrillic-Medium.eot?#iefix') format('embedded-opentype'),
+    url('resources/GillSansProCyrillic-Medium.woff2') format('woff2'),
+    url('resources/GillSansProCyrillic-Medium.woff') format('woff'),
+    url('resources/GillSansProCyrillic-Medium.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+font-family: "Gill Sans";
+src: url('resources/GillSansProCyrillic-Bold.eot');
+src: local('Gill Sans Pro Cyrillic Bold'), local('GillSansProCyrillic-Bold'),
+    url('resources/GillSansProCyrillic-Bold.eot?#iefix') format('embedded-opentype'),
+    url('resources/GillSansProCyrillic-Bold.woff2') format('woff2'),
+    url('resources/GillSansProCyrillic-Bold.woff') format('woff'),
+    url('resources/GillSansProCyrillic-Bold.ttf') format('truetype');
+ font-weight: bold;
+ font-style: normal;
+}
+@font-face {
+font-family: "Gill Sans";
+src: url('resources/GillSansProCyrillic-MediumItali.eot');
+src: local('Gill Sans Pro Cyrillic Medium Italic'), local('GillSansProCyrillic-MediumItali'),
+    url('resources/GillSansProCyrillic-MediumItali.eot?#iefix') format('embedded-opentype'),
+    url('resources/GillSansProCyrillic-MediumItali.woff2') format('woff2'),
+    url('resources/GillSansProCyrillic-MediumItali.woff') format('woff'),
+    url('resources/GillSansProCyrillic-MediumItali.ttf') format('truetype');
+ font-weight: normal;
+ font-style: italic;
+}
+html {
+	overflow: hidden;
+}
+body {
+	position: fixed;
+	height: 100%; /* prevent overscroll bounce */
+	width: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+header {
+	background: #202020;
+}
+.logo-ext svg {
+	width: 100px;
+}
+.head--article {
+	font-family: "Gill Sans", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	background: #202020;
+}
+.category--article {
+	color: #B5B5B5;
+}
+.title--article h1 {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2rem;
+	margin: 2rem 0 1rem;
+	color: white;
+}
+.sub--article {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+	margin-bottom: 2rem;
+	color: #B5B5B5;
+}
+.image--article {
+	display: block;
+	position: relative;
+	background: #202020;
+}
+.image--article img {
+	display: block;
+	position: relative;
+	width: 100%;
+	z-index: 2; /*объекты ложить выше 2*/
+}
+.image-half-bg--article {
+	position: absolute;
+	bottom: 0;
+	height: 50%;
+	width: 100vw;
+	background: white;
+	z-index: 1;
+}
+.content--article {
+	padding: 1rem 0;
+}
+
+footer {
+	font-family: "Gill Sans", sans-serif;
+	font-size: 2rem;
+	background: #202020;
+	padding: 8rem 0 1rem;
+	color: white;
+}
+footer span {
+	color: #888888;
+}
+
+.button--menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 4rem;
+	right: 14px;
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
+	border: solid 3px white;
+	background: rgba(255, 126, 0, 0.4);
+	cursor: pointer;
+	z-index: 9999;
+}
+.button--menu.lefty {
+	right: auto;
+	left: 14px;
+}
+.button--menu[data-menuState="opened"] {
+	background: #FF7E00;
+}
+.button--menu svg {
+	opacity: 0;
+	width: 20px;
+	fill: white;
+	stroke: white;
+	stroke-width: 30px;
+	transition: 0.5s;
+}
+.button--menu[data-menuState="opened"] svg {
+	opacity: 1;
+}
+body.fixpos {
+	overflow: hidden;
+}
+.drawer--menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: fixed;
+	height: 100%;
+	width: 100vw;
+	z-index: 3;
+	top: 0;
+	left: -100vw;
+	background: #202020;
+	overflow: hidden;
+	transition: 0.5s;
+	color: white;
+	font-family: "Gill Sans", sans-serif;
+}
+.drawer--menu.open {
+	left: 0;
+}
+.bottom--menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.categories--menu {
+	position: relative;
+	text-align: right;
+	margin-bottom: 4rem;
+	font-size: 1.2rem;
+}
+.categories--menu.lefty {
+	text-align: left;
+}
+.categories--menu ul {
+	position: relative;
+	list-style: none;
+	overflow: scroll;
+	margin: 0;
+	padding: 0;
+	margin-right: -15px;
+	padding-right: 15px;
+}
+.categories--menu ul.lefty {
+	margin: 0;
+	padding: 0;
+}
+fade {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to bottom, 
+        rgba(32, 32, 32, 0), 
+        rgba(32, 32, 32, 1)
+    100%);
+    pointer-events: none;
+}
+.lag-- {
+	text-align: left;
+}
+.rag-- {
+	text-align: right;
+}
+.footer--menu {
+	padding: 1rem 0;
+}
+.footer--menu a {
+	color: #FF7E00;
+	text-decoration: underline;
+}
