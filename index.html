@@ -120,7 +120,7 @@
 				align-items: center;
 				position: fixed;
 				bottom: 4rem;
-				right: 1rem;
+				right: 14px;
 				height: 3rem;
 				width: 3rem;
 				border-radius: 50%;
@@ -170,6 +170,31 @@
 				flex-direction: column;
 				justify-content: flex-end;
 			}
+			.categories--menu {
+				position: relative;
+				height: 5rem;
+				text-align: right;
+				margin-bottom: 4rem;
+			}
+			.categories--menu ul {
+				height: 5rem;
+				margin-right: -15px;
+				padding-right: 15px;
+				position: relative;
+				list-style: none;
+				overflow: scroll;
+			}
+			fade {
+			    display: block;
+			    position: absolute;
+			    bottom: 0px;
+			    width: 100%;
+			    height: 50px;
+			    background-image: linear-gradient(to bottom, 
+			        rgba(32, 32, 32, 0), 
+			        rgba(32, 32, 32, 1)
+			    100%);
+			}
 			.lag-- {
 				text-align: left;
 			}
@@ -198,6 +223,19 @@
 				</div>
 			</header>
 			<div class="bottom--menu">
+				<div class="categories--menu">
+					<div class="wrapper container">
+						<ul>
+							<li>Категория 1</li>
+							<li>Категория 2</li>
+							<li>Категория 3</li>
+							<li>Категория 4</li>
+							<li>Категория 5</li>
+							<li>Категория 6</li>
+						</ul>
+						<fade></fade>
+					</div>
+				</div>
 				<div class="footer--menu align-items-end">
 					<div class="wrapper container">
 						<div class="row justify-content-between">
