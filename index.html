@@ -129,15 +129,24 @@
 				cursor: pointer;
 				z-index: 9999;
 			}
+			.button--menu[data-menuState="opened"] {
+				background: #FF7E00;
+			}
 			.button--menu svg {
-				display: none;
-				width: 25px;
+				opacity: 0;
+				width: 20px;
 				fill: white;
+				stroke: white;
+				stroke-width: 30px;
+				transition: 0.5s;
 			}
 			.button--menu[data-menuState="opened"] svg {
-				display: block;
+				opacity: 1;
 			}
 			.drawer--menu {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
 				position: fixed;
 				height: 100vh;
 				width: 100vw;
@@ -147,9 +156,29 @@
 				background: #202020;
 				overflow-x: hidden;
 				transition: 0.5s;
+				color: white;
+				font-family: "Gill Sans", sans-serif;
 			}
 			.drawer--menu.open {
 				left: 0;
+			}
+			.bottom--menu {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+			}
+			.lag-- {
+				text-align: left;
+			}
+			.rag-- {
+				text-align: right;
+			}
+			.footer--menu {
+				padding: 1rem 0;
+			}
+			.footer--menu a {
+				color: #FF7E00;
+				text-decoration: underline;
 			}
 		</style>
 	</head>
@@ -165,7 +194,18 @@
 					</div>
 				</div>
 			</header>
-		</div>
+			<div class="bottom--menu">
+				<div class="footer--menu align-items-end">
+					<div class="wrapper container">
+						<div class="row justify-content-between">
+							<div class="col-3 lag--"><a href="#">я левша</a></div>
+							<div class="col-3 rag--"><a href="#">главная</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- END drawer -->
+		
 		<div id="layout">
 			<header>
 				<div class="wrapper container">
