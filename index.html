@@ -143,6 +143,9 @@
 			.button--menu[data-menuState="opened"] svg {
 				opacity: 1;
 			}
+			body.fixpos {
+				overflow: hidden;
+			}
 			.drawer--menu {
 				display: flex;
 				flex-direction: column;
@@ -274,9 +277,11 @@
 			$(document).ready(function() {
 				$('.button--menu').click(function() {
 					if ($(this).attr('data-menuState') === 'closed') {
+						$('body').addClass('fixpos');
 						$('#drawer').addClass('open');
 						$(this).attr('data-menuState', 'opened');
 					} else {
+						$('body').removeClass('fixpos');
 						$('#drawer').removeClass('open')
 						$(this).attr('data-menuState', 'closed');
 					}
