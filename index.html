@@ -48,7 +48,14 @@
 			 font-weight: normal;
 			 font-style: italic;
 			}
+			html {
+				overflow: hidden;
+			}
 			body {
+				position: fixed;
+				height: 100%; /* prevent overscroll bounce */
+				overflow-y: scroll;
+				-webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
 			}
