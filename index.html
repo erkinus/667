@@ -330,6 +330,12 @@
 				var handstart = Cookies.get('hand');
 				if(handstart == 'l') {
 					$(this).attr('data-handState', handstart);
+					$('.button--menu').addClass('lefty');
+					$('.categories--menu').addClass('lefty');
+					$('.categories--menu ul').addClass('lefty');
+					$('#hand-toggle').text('я правша');
+					$('.hand--menu').addClass('order-last').removeClass('lag--').addClass('rag--');
+					$('.home--menu').addClass('order-first').removeClass('rag--').addClass('lag--');
 				}	
 				
 				$('.button--menu').click(function() {
