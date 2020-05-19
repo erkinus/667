@@ -354,7 +354,7 @@
 						$('.home--menu').addClass('order-first').removeClass('rag--').addClass('lag--');
 						$(this).attr('data-handState', 'l');
 						var hand = $(this).attr('data-handState');
-						Cookies.set('hand', hand);
+						Cookies.set('hand', hand, {expires: 365, secure: true, domain: 'erkinus.github.io'});
 					} else {
 						$('.button--menu').removeClass('lefty');
 						$('.categories--menu').removeClass('lefty');
@@ -364,7 +364,7 @@
 						$('.home--menu').removeClass('order-first').removeClass('lag--').addClass('rag--');
 						$(this).attr('data-handState', 'r');
 						var hand = $(this).attr('data-handState');
-						Cookies.set('hand', hand);
+						Cookies.set('hand', hand, {expires: 365, secure: true, domain: 'erkinus.github.io'});
 					}
 				})
 			});
