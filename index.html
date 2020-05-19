@@ -103,6 +103,16 @@
 			.content--article {
 				padding: 1rem 0;
 			}
+			
+			footer {
+				font-family: "Gill Sans", sans-serif;
+				background: #202020;
+				padding: 4rem 0 4rem;
+				color: white;
+			}
+			footer span {
+				color: #888888;
+			}
 		</style>
 	</head>
 
@@ -120,16 +130,18 @@
 			<article>
 				<div class="head--article">
 					<div class="wrapper container">
-						<div class="category--article">
-							<b>Категория</b><br><i>20 февраля 2020</i>
+						<div class="row">
+							<div class="col-12 category--article">
+								<b>Категория</b><br><i>20 февраля 2020</i>
+							</div>
+							<div class="col-12 title--article">
+								<h1>Twitter заблокировал СД за оскорбления Талиба Квели</h1>
+							</div>
+							<div class="col-12 sub--article">
+								<p>Обещал закончить карьеру СД, но пока только отобрал "галочку"</p>
+							</div>
 						</div>
-						<div class="title--article">
-							<h1>Twitter заблокировал СД за оскорбления Талиба Квели</h1>
-						</div>
-						<div class="sub--article">
-							<p>Обещал закончить карьеру СД, но пока только отобрал "галочку"</p>
-						</div>
-					</div><!-image--article не включен в wrapper т.к. для корректной работы раздвоения фона image-half-bg--article нужно ставить его отдельно от общего контейнера->
+					</div><!-END wrapper container --- image--article не включен в wrapper т.к. для корректной работы раздвоения фона image-half-bg--article нужно ставить его отдельно от общего контейнера->
 						<div class="image--article">
 							<img class="container" src="resources/image.jpg" alt="">
 							<div class="image-half-bg--article"></div><!-соотносить с цветом общего фона->
@@ -144,6 +156,18 @@
 					</div>
 				</div>
 			</article>
+			
+			<footer>
+				<div class="wrapper container">
+					<div class="row">
+						<div class="col-12">
+							<div class="copyright--footer">
+								667 <span>| <i>six-six-seven</i></span><br>© MMXX
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
 		
 	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
