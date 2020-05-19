@@ -129,6 +129,10 @@
 				cursor: pointer;
 				z-index: 9999;
 			}
+			.button--menu.lefty {
+				right: auto;
+				left: 14px;
+			}
 			.button--menu[data-menuState="opened"] {
 				background: #FF7E00;
 			}
@@ -172,17 +176,25 @@
 			}
 			.categories--menu {
 				position: relative;
-				height: 5rem;
 				text-align: right;
 				margin-bottom: 4rem;
+				font-size: 1.2rem;
+			}
+			.categories--menu.lefty {
+				text-align: left;
 			}
 			.categories--menu ul {
-				height: 5rem;
-				margin-right: -15px;
-				padding-right: 15px;
 				position: relative;
 				list-style: none;
 				overflow: scroll;
+				margin: 0;
+				padding: 0;
+				margin-right: -15px;
+				padding-right: 15px;
+			}
+			.categories--menu ul.lefty {
+				margin: 0;
+				padding: 0;
 			}
 			fade {
 			    display: block;
@@ -194,6 +206,7 @@
 			        rgba(32, 32, 32, 0), 
 			        rgba(32, 32, 32, 1)
 			    100%);
+			    pointer-events: none;
 			}
 			.lag-- {
 				text-align: left;
@@ -239,8 +252,8 @@
 				<div class="footer--menu align-items-end">
 					<div class="wrapper container">
 						<div class="row justify-content-between">
-							<div class="col-4 lag--"><a href="#">я левша</a></div>
-							<div class="col-4 rag--"><a href="#">главная</a></div>
+							<div class="col-4 hand--menu lag--"><a id="hand-toggle" data-handState="r" href="#">я левша</a></div>
+							<div class="col-4 home--menu rag--"><a href="#">главная</a></div>
 						</div>
 					</div>
 				</div>
@@ -310,9 +323,15 @@
 	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<script src="resources/js.cookie.js"></script>
 		
 		<script>
 			$(document).ready(function() {
+				var handstart = Cookies.get('hand');
+				if(handstart == 'l') {
+					$(this).attr('data-handState', handstart);
+				}	
+				
 				$('.button--menu').click(function() {
 					if ($(this).attr('data-menuState') === 'closed') {
 						$('body').addClass('fixpos');
@@ -324,6 +343,30 @@
 						$(this).attr('data-menuState', 'closed');
 					}
 				});
+				
+				$('#hand-toggle').click(function() {
+					if ($(this).attr('data-handState') === 'r') {
+						$('.button--menu').addClass('lefty');
+						$('.categories--menu').addClass('lefty');
+						$('.categories--menu ul').addClass('lefty');
+						$('#hand-toggle').text('я правша');
+						$('.hand--menu').addClass('order-last').removeClass('lag--').addClass('rag--');
+						$('.home--menu').addClass('order-first').removeClass('rag--').addClass('lag--');
+						$(this).attr('data-handState', 'l');
+						var hand = $(this).attr('data-handState');
+						Cookies.set('hand', hand);
+					} else {
+						$('.button--menu').removeClass('lefty');
+						$('.categories--menu').removeClass('lefty');
+						$('.categories--menu ul').removeClass('lefty');
+						$('#hand-toggle').text('я левша');
+						$('.hand--menu').removeClass('order-last').removeClass('rag--').addClass('lag--');
+						$('.home--menu').removeClass('order-first').removeClass('lag--').addClass('rag--');
+						$(this).attr('data-handState', 'r');
+						var hand = $(this).attr('data-handState');
+						Cookies.set('hand', hand);
+					}
+				})
 			});
 			
 		</script>
