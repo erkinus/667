@@ -90,7 +90,7 @@
 				display: block;
 				position: relative;
 				width: 100%;
-				z-index: 2;
+				z-index: 2; /*объекты ложить выше 2*/
 			}
 			.image-half-bg--article {
 				position: absolute;
@@ -107,7 +107,7 @@
 			footer {
 				font-family: "Gill Sans", sans-serif;
 				background: #202020;
-				padding: 4rem 0 4rem;
+				padding: 8rem 0 1rem;
 				color: white;
 			}
 			footer span {
@@ -124,11 +124,33 @@
 				border: solid 3px white;
 				background: rgba(255, 126, 0, 0.4);
 				cursor: pointer;
+				z-index: 9999;
+			}
+			.drawer--menu {
+				position: fixed;
+				height: 100vh;
+				width: 0;
+				z-index: 3;
+				top: 0;
+				left: 0;
+				background: #202020;
+				overflow-x: hidden;
+				transition: 0.5s;
+			}
+			.drawer--menu.open {
+				width: 100vw;
 			}
 		</style>
 	</head>
 
 	<body>
+		<div id="drawer" class="drawer--menu">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <a href="#">About</a>
+			  <a href="#">Services</a>
+			  <a href="#">Clients</a>
+			  <a href="#">Contact</a>
+		</div>
 		<div id="layout">
 			<header>
 				<div class="wrapper container">
@@ -139,6 +161,7 @@
 					</div>
 				</div>
 			</header>
+			
 			<article>
 				<div class="head--article">
 					<div class="wrapper container">
@@ -150,7 +173,7 @@
 								<h1>Twitter заблокировал СД за оскорбления Талиба Квели</h1>
 							</div>
 							<div class="col-12 sub--article">
-								<p>Обещал закончить карьеру СД, но пока только отобрал "галочку"</p>
+								<span>Обещал закончить карьеру СД, но пока только отобрал "галочку"</span>
 							</div>
 						</div>
 					</div><!-END wrapper container --- image--article не включен в wrapper т.к. для корректной работы раздвоения фона image-half-bg--article нужно ставить его отдельно от общего контейнера->
@@ -180,7 +203,27 @@
 					</div>
 				</div>
 			</footer>
-			<div class="button--menu"></div>
+			
+			<div class="button--menu" data-menu-state="closed"></div>
+			
+		</div><!-- END layout -->
+		
+		<script>
+			$(document).ready(function() {
+				$('.button--menu').click(function() {
+					if ($(this).data('menu-state') === 'closed') {
+						$('#drawer').addClass('open');
+						$(this).data('menu-state') = 'opened';
+					} else {
+						$('#drawer').removeClass('open')
+						$(this).data('menu-state') = 'closed';
+					}
+				});
+			});
+			
+		</script>
+ 	
+			
 	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
