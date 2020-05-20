@@ -31,6 +31,12 @@ src: local('Gill Sans Pro Cyrillic Medium Italic'), local('GillSansProCyrillic-M
  font-weight: normal;
  font-style: italic;
 }
+:root {
+	--info-heading-fs: 0.8rem;
+	--orange: #FF7E00;
+	--black: #202020;
+	--lblack: #b5b5b5;
+}
 html {
 	overflow: hidden;
 }
@@ -63,7 +69,7 @@ header {
 	font-family: "Gill Sans", sans-serif;
 }
 .news .category {
-	font-size: 0.8rem;
+	font-size: var(--info-heading-fs);
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -71,18 +77,20 @@ header {
 	font-style: italic;
 }
 .newsInfo {
-	font-size: 0.8rem;
+	font-size: var(--info-heading-fs);
 	margin-bottom: 0.3rem;
 }
 .heading--block {
+	font-size: var(--info-heading-fs);
+	font-weight: bold;
 	padding: 0.5rem 0;
 }
 /**************************TOP STORY**************************/
 .topstory {
-	background: #202020;
+	background: var(--black);
 }
 .topstory .carcas {
-	border-bottom: solid #FF7E00 3px;
+	border-bottom: solid var(--orange) 3px;
 }
 .image--topstory {
 	height: 230px;
@@ -97,10 +105,10 @@ header {
 	padding: 1rem 15px;	
 }
 .topstory .newsInfo {
-	color: #b5b5b5;
+	color: var(--lblack);
 }
 .topstory .category {
-	color: #FF7E00;
+	color: var(--orange);
 }
 .heading--topstory {
 	font-size: 1.5rem;
@@ -111,7 +119,7 @@ header {
 }
 .sub--topstory {
 	line-height: 1.2;
-	color: #b5b5b5;
+	color: var(--lblack);
 }
 /***************************STORY***************************/
 .story {
@@ -119,12 +127,12 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	margin: 0 -15px;
-	padding-left: 15px;
 	background: #f9f9f9;
 }
 .img--story {
 	height: 134px;
 	width: 134px;
+	flex-shrink: 0;
 }
 .img--story img {
 	height: 100%;
@@ -135,9 +143,12 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	padding: 0 15px;
 }
 .heading--story {
-	font-size: 0.9rem;
+	font-size: 1rem;
+	font-weight: bold;
+	color: var(--lblack);
 }
 /**************************ARTICLE**************************/
 .head--article {
@@ -146,10 +157,10 @@ header {
 	font-style: normal;
 	margin-top: -64px; /* исправить срочно этот момент!!!! */
 	padding-top: 64px;
-	background: #202020;
+	background: var(--black);
 }
 .category--article {
-	color: #B5B5B5;
+	color: var(--lblack);
 }
 .title--article h1 {
 	font-weight: normal;
@@ -163,12 +174,12 @@ header {
 	font-style: normal;
 	font-size: 1rem;
 	margin-bottom: 2rem;
-	color: #B5B5B5;
+	color: var(--lblack);
 }
 .image--article {
 	display: block;
 	position: relative;
-	background: #202020;
+	background: var(--black);
 }
 .image--article img {
 	display: block;
@@ -191,7 +202,7 @@ header {
 footer {
 	font-family: "Gill Sans", sans-serif;
 	font-size: 2rem;
-	background: #202020;
+	background: var(--black);
 	padding: 8rem 0 1rem;
 	color: white;
 }
@@ -219,7 +230,7 @@ footer span {
 	left: 14px;
 }
 .button--menu[data-menuState="opened"] {
-	background: #FF7E00;
+	background: var(--orange);
 }
 .button--menu svg {
 	opacity: 0;
@@ -245,7 +256,7 @@ body.fixpos {
 	z-index: 3;
 	top: 0;
 	left: -100vw;
-	background: #202020;
+	background: black;
 	overflow: hidden;
 	transition: 0.5s;
 	color: white;
@@ -288,8 +299,8 @@ fade {
     width: 100%;
     height: 50px;
     background-image: linear-gradient(to bottom, 
-        rgba(32, 32, 32, 0), 
-        rgba(32, 32, 32, 1)
+        rgba(0, 0, 0, 0), 
+        rgba(0, 0, 0, 1)
     100%);
     pointer-events: none;
 }
@@ -303,6 +314,6 @@ fade {
 	padding: 1rem 0;
 }
 .footer--menu a {
-	color: #FF7E00;
+	color: var(--orange);
 	text-decoration: underline;
 }
