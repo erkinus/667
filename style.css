@@ -43,16 +43,75 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
 header {
-	background: #202020;
+	position: relative;
+	z-index: 3;
 }
 .logo-ext svg {
 	width: 100px;
 }
+
+/*****************************NEWS****************************/
+.news {
+	margin-top: -64px;
+	font-family: "Gill Sans", sans-serif;
+}
+.news .category {
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.news .date {
+	font-style: italic;
+}
+/**************************TOP STORY**************************/
+.topstory {
+	background: #202020;
+}
+.topstory .carcas {
+	padding-bottom: 1rem;
+	border-bottom: solid #FF7E00 3px;
+}
+.image--topstory {
+	height: 230px;
+	width: 100%;
+}
+.image--topstory img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.info--topstory {
+	font-size: 0.8rem;
+	margin: 1rem 0 0.3rem;
+	color: #b5b5b5;
+}
+.topstory .category {
+	color: #FF7E00;
+}
+.heading--topstory {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.3rem;
+	color: white;
+}
+.sub--topstory {
+	color: #b5b5b5;
+}
+
+/**************************ARTICLE**************************/
 .head--article {
 	font-family: "Gill Sans", sans-serif;
 	font-weight: normal;
 	font-style: normal;
+	margin-top: -64px; /* исправить срочно этот момент!!!! */
+	padding-top: 64px;
 	background: #202020;
 }
 .category--article {
