@@ -70,12 +70,15 @@ header {
 .news .date {
 	font-style: italic;
 }
+.newsInfo {
+	font-size: 0.8rem;
+	margin-bottom: 0.3rem;
+}
 /**************************TOP STORY**************************/
 .topstory {
 	background: #202020;
 }
 .topstory .carcas {
-	padding-bottom: 1rem;
 	border-bottom: solid #FF7E00 3px;
 }
 .image--topstory {
@@ -87,9 +90,10 @@ header {
 	width: 100%;
 	object-fit: cover;
 }
-.info--topstory {
-	font-size: 0.8rem;
-	margin: 1rem 0 0.3rem;
+.text--topstory {
+	padding: 1rem 15px;	
+}
+.topstory .newsInfo {
 	color: #b5b5b5;
 }
 .topstory .category {
@@ -98,10 +102,12 @@ header {
 .heading--topstory {
 	font-size: 1.5rem;
 	font-weight: bold;
+	line-height: 1.2;
 	margin-bottom: 0.3rem;
 	color: white;
 }
 .sub--topstory {
+	line-height: 1.2;
 	color: #b5b5b5;
 }
 
