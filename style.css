@@ -118,7 +118,8 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-right: -15px;
+	margin: 0 -15px;
+	padding-left: 15px;
 	background: #f9f9f9;
 }
 .img--story {
