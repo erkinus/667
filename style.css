@@ -74,6 +74,9 @@ header {
 	font-size: 0.8rem;
 	margin-bottom: 0.3rem;
 }
+.heading--block {
+	padding: 0.5rem 0;
+}
 /**************************TOP STORY**************************/
 .topstory {
 	background: #202020;
@@ -110,7 +113,31 @@ header {
 	line-height: 1.2;
 	color: #b5b5b5;
 }
-
+/***************************STORY***************************/
+.story {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-right: -15px;
+	background: #f9f9f9;
+}
+.img--story {
+	height: 134px;
+	width: 134px;
+}
+.img--story img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.text--story {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.heading--story {
+	font-size: 0.9rem;
+}
 /**************************ARTICLE**************************/
 .head--article {
 	font-family: "Gill Sans", sans-serif;
