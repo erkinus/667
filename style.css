@@ -104,7 +104,11 @@ header {
 	object-fit: cover;
 }
 .text--topstory {
-	padding: 1rem 15px;	
+	width: 100%;
+	margin-top: -45px;
+	padding: 1rem 15px;
+	background: linear-gradient(to top, var(--black) 80%, rgba(0, 0, 0, 0) 100%);
+		
 }
 .topstory .newsInfo {
 	color: var(--lblack);
@@ -195,6 +199,7 @@ header {
 	bottom: 0;
 	height: 50%;
 	width: 100vw;
+	border-top: solid var(--orange) 3px;
 	background: white;
 	z-index: 1;
 }
